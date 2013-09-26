@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Web App Skeleton v 0.3</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<header>
+		<h1>Web App Skeleton</h1>
+		<nav>
+			<ul>
+				<li><a href="#/game">Game</a></li>
+				<li><a href="#/ranking">Ranking</a></li>
+				<li><a href="#/schedule">Schedule</a></li>
+		    </ul>
+		</nav>
+	</header>
+	
+	<article id="content" class="col">
+		<section data-route="game" class="active">
+			<h1 data-bind="title"></h1>
+			
+			<table>
+				<tr>
+					<th>Team</th>
+					<th>Result</th>
+					<th>Team</th>
+				</tr>
+				<tbody data-bind="winner">
+					<tr>
+						<td data-bind="team1"></td>
+						<td><span data-bind="team1Score"></span> - <span data-bind="team2Score"></span></td>
+						<td data-bind="team2"></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table>
+				<tr>
+					<th>Score</th>
+					<th>Team</th>
+					<th>Points</th>
+					<th>Team</th>
+				</tr>
+				<tbody data-bind="gameContent">
+					<tr>
+						<td data-bind="score"></td>
+						<td data-bind="team1"></td>
+						<td><span data-bind="team1Score"></span> - <span data-bind="team2Score"></span></td>
+						<td data-bind="team2"></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+
+		<section data-route="ranking">
+			<h1 data-bind="title"></h1>
+			 <table>
+                <tr>
+                    <th>Team</th>
+                    <th>W</th>
+                    <th>L</th>
+                    <th>Points won</th>
+                    <th>Points lost</th>
+                    <th>+/-</th>
+                </tr>
+				<tbody data-bind="rankingContent">
+					<tr>
+						<td data-bind="team"></td>
+						<td data-bind="Win"></td>
+						<td data-bind="Lost"></td>
+						<td data-bind="Pw"></td>
+						<td data-bind="Pl"></td>
+						<td data-bind="Sl"></td>
+					</tr>
+				</tbody>
+            </table>
+			
+		</section>
+		
+		<section data-route="schedule">
+			<h1 data-bind="title"></h1>
+			 <table>
+                <tr>
+                    <th>Monday 18 March</th>
+                    <th>Team</th>
+                    <th>Result</th>
+                    <th>Team</th>
+                </tr>
+				
+				<tbody data-bind="scheduleContent">
+					<tr>
+						<td data-bind="date"></td>
+						<td data-bind="team1"></td>
+						<td><span data-bind="team1Score"></span> - <span data-bind="team2Score"></span></td>
+						<td data-bind="team2"></td>
+					</tr>
+				</tbody>
+            </table>
+		</section>
+	</article>
+
+	<!-- Libs -->
+	<script src="javascript/lib/routie.min.js"></script>
+	<script src="javascript/lib/ready.min.js" type="text/javascript"></script>
+	<script src="javascript/lib/qwery.min.js" type="text/javascript"></script>
+	<script src="javascript/lib/transparancy.min.js" type="text/javascript"></script>
+
+	<!-- Application -->
+	<script src="javascript/app.js"></script>
+	
+</body>
+</html>
